@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  repositories: |
+    - url: https://github.com/helm/charts.git
+    - url: https://github.com/thomasv314/infra-eks.git
+  helm.repositories: |
+    - url: https://charts.bitnami.com/bitnami
+      name: bitnami
+  resource.customizations: |
+    admissionregistration.k8s.io/MutatingWebhookConfiguration:
+      ignoreDifferences: |
+        jsonPointers:
+        - /webhooks/0/clientConfig/caBundle

@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: master-app
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/thomasv314/infra-eks.git
+    targetRevision: HEAD
+    path: applications/ops-apps
+  destination:
+    namespace: ops
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+    validate: true
