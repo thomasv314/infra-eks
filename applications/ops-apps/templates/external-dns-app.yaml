@@ -14,8 +14,7 @@ spec:
   helm:
     parameters:
       - name: "domainFilters"
-        value: "\{{{ .Values.domain }}\}"
-
+        value: "[{{ .Values.domain }}]"
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: external-dns
