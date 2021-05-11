@@ -1,3 +1,5 @@
+domain: dev.thomasbuilds.technology
+
 spec:
   source:
     repoURL: https://github.com/thomasv314/infra-eks.git

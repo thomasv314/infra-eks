@@ -10,6 +10,12 @@ spec:
     namespace: ops
     server: {{ .Values.spec.destination.server }}
   project: default
+
+  helm:
+    parameters:
+      - name: "domainFilters"
+        value: "\{{{ .Values.domain }}\}"
+
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: external-dns
