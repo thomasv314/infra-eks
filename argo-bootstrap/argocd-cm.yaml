@@ -6,9 +6,9 @@ data:
   repositories: |
     - url: https://github.com/helm/charts.git
     - url: https://github.com/thomasv314/infra-eks.git
-  helm.repositories: |
     - url: https://charts.bitnami.com/bitnami
       name: bitnami
+      type: helm
   resource.customizations: |
     admissionregistration.k8s.io/MutatingWebhookConfiguration:
       ignoreDifferences: |
