@@ -18,7 +18,7 @@ spec:
       - name: "domainFilters"
         value: "[{{ .Values.domain }}]"
       - name: "fqdnTemplates"
-        value: {{ printf "{{.Name}}.%s" .Values.domain }}
+        value: {{"{{"}}.Name{{"}}"}}.{{ .Values.domain}}
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: external-dns
