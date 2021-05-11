@@ -11,5 +11,6 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    chart: bitnami/external-dns
+    repoURL: bitnami
+    chart: external-dns
     targetRevision: 5.0.0
