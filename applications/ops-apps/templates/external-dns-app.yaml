@@ -6,23 +6,23 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
+  project: default
   destination:
     namespace: ops
     server: {{ .Values.spec.destination.server }}
-  project: default
-
-  helm:
-    parameters:
-      - name: "aws.region"
-        value: "us-east-2"
-      - name: "domainFilters"
-        value: {{ "{" }}{{ .Values.domain }}{{ "}" }}
-      - name: "fqdnTemplates"
-        value: '{{ "{{" }}.Name{{ "}}" }}.{{ .Values.domain }}'
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: external-dns
     targetRevision: 5.0.0
+    helm:
+      parameters:
+        - name: "aws.region"
+          value: "us-east-2"
+        - name: "domainFilters"
+          value: {{ "{" }}{{ .Values.domain }}{{ "}" }}
+        - name: "fqdnTemplates"
+          value: '{{ "{{" }}.Name{{ "}}" }}.{{ .Values.domain }}'
+
   syncPolicy:
     automated:
       prune: true
