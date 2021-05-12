@@ -8,20 +8,16 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: istio-operator
+    namespace: istio-system
     server: {{ .Values.spec.destination.server }}
   source:
-    repoURL: https://github.com/istio/istio.git
-    targetRevision: "1.9.5"
-    path: manifests/charts/istio-operator
+    repoURL: https://github.com/thomasv314/infra-eks.git
+    targetRevision: HEAD
+    path: applications/istio
     helm:
-      parameters:
-        - name: "enableCRDTemplates"
-          value: "true"
-        - name: "operatorNamespace"
-          value: "istio-operator"
-        - name: "istioNamespace"
-          value: "istio-system"
+      valueFiles:
+        - values.yaml
+        - values-{{ .Values.environment }}.yaml
   syncPolicy:
     automated:
       prune: true
