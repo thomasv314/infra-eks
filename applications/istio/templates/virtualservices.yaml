@@ -1,0 +1,11 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: argocd
+spec:
+  hosts:
+  - argo.dev.thomasbuilds.technology
+  http:
+  - route:
+    - destination:
+        host: argocd-server.argocd.svc.cluster.local
