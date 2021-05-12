@@ -3,4 +3,4 @@ external-dns:
     region: us-east-2
   domainFilters:
     - dev.thomasbuilds.technology
-  fqdnTemplates: "{{ .Name }}.dev.thomasbuilds.technology
+  fqdnTemplates: "{{ .Name }}.dev.thomasbuilds.technology"
