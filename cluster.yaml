@@ -13,3 +13,12 @@ managedNodeGroups:
   volumeSize: 10
   ssh:
     allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
+
+iam:
+  withOIDC: true
+  serviceAccounts:
+  - metadata:
+      name: external-dns
+      namespace: ops
+    attachPolicyARNs:
+    - arn:aws:iam::007574914499:policy/external-dns
