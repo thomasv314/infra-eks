@@ -3,6 +3,8 @@ kind: VirtualService
 metadata:
   name: argocd
 spec:
+  gateways:
+  - istio-ingressgateway
   hosts:
   - argo.dev.thomasbuilds.technology
   http:
