@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: external-dns
+  name: istio
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -11,13 +11,9 @@ spec:
     namespace: ops
     server: {{ .Values.spec.destination.server }}
   source:
-    repoURL: https://github.com/thomasv314/infra-eks.git
+    repoURL: https://github.com/istio/istio.git
     targetRevision: HEAD
-    path: applications/external-dns
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-{{ .Values.environment }}.yaml
+    path: manifests/charts/istio-operator
   syncPolicy:
     automated:
       prune: true

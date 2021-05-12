@@ -1,4 +1,5 @@
 domain: dev.thomasbuilds.technology
+environment: dev
 
 spec:
   source:
