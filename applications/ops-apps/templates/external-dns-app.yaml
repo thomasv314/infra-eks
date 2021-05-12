@@ -16,11 +16,9 @@ spec:
     path: applications/external-dns
     helm:
       parameters:
-        - name: "aws.region"
-          value: "us-east-2"
-        - name: "domainFilters"
+        - name: "external-dns.domainFilters"
           value: '{{ "{" }}{{ .Values.domain }}{{ "}" }}'
-        - name: "fqdnTemplates"
+        - name: "external-dns.fqdnTemplates"
           value: '{{ "{{" }}.Name{{ "}}" }}.{{ .Values.domain }}'
 
   syncPolicy:
