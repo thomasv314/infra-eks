@@ -7,6 +7,5 @@ bases:
 resources:
   - argocd-namespace.yaml
   - ops-app.yaml
-  - ops-namespace.yaml
 patchesStrategicMerge:
   - argocd-cm.yaml
