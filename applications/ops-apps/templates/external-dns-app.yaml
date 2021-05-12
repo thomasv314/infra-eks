@@ -11,9 +11,9 @@ spec:
     namespace: ops
     server: {{ .Values.spec.destination.server }}
   source:
-    repoURL: https://charts.bitnami.com/bitnami
-    chart: external-dns
-    targetRevision: 5.0.0
+    repoURL: https://github.com/thomasv314/infra-eks.git
+    targetRevision: HEAD
+    path: applications/external-dns
     helm:
       parameters:
         - name: "aws.region"
