@@ -15,8 +15,7 @@ spec:
     targetRevision: HEAD
     path: applications/external-dns
     helm:
-      values:
-        foo: bar
+      values: applications/external-dns/values-dev.yaml
   syncPolicy:
     automated:
       prune: true
