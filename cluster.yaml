@@ -16,9 +16,3 @@ managedNodeGroups:
 
 iam:
   withOIDC: true
-  serviceAccounts:
-  - metadata:
-      name: external-dns
-      namespace: ops
-    attachPolicyARNs:
-    - arn:aws:iam::007574914499:policy/external-dns
