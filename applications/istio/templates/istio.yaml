@@ -5,3 +5,10 @@ metadata:
   name: istio
 spec:
   profile: default
+  components:
+    ingressGateways:
+      - name: istio-ingressgateway
+        enabled: true
+        k8s:
+          serviceAnnotations:
+            service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ .Values.acm_certificate_arn }}

@@ -14,6 +14,10 @@ spec:
     repoURL: https://github.com/thomasv314/infra-eks.git
     targetRevision: HEAD
     path: applications/istio
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-{{ .Values.environment }}.yaml
   syncPolicy:
     automated:
       prune: true
