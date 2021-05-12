@@ -15,12 +15,7 @@ spec:
     targetRevision: HEAD
     path: applications/external-dns
     helm:
-      parameters:
-        - name: "external-dns.domainFilters"
-          value: '{{ "{" }}{{ .Values.domain }}{{ "}" }}'
-        - name: "external-dns.fqdnTemplates"
-          value: '{{ "{{" }}.Name{{ "}}" }}.{{ .Values.domain }}'
-
+      values: values-dev.yaml
   syncPolicy:
     automated:
       prune: true
