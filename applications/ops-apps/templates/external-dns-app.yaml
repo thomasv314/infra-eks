@@ -15,7 +15,7 @@ spec:
     targetRevision: HEAD
     path: applications/external-dns
     helm:
-      parameters: {}
+      parameters: []
         #- name: "external-dns.domainFilters"
         #  value: '{{ "{" }}{{ .Values.domain }}{{ "}" }}'
         #- name: "external-dns.fqdnTemplates"
