@@ -12,8 +12,14 @@ spec:
     server: {{ .Values.spec.destination.server }}
   source:
     repoURL: https://github.com/istio/istio.git
-    targetRevision: HEAD
+    targetRevision: "1.9.5"
     path: manifests/charts/istio-operator
+    helm:
+      parameters:
+        - name: "operatorNamespace"
+          value: "istio-operator"
+        - name: "istioNamespace"
+          value: "istio-system"
   syncPolicy:
     automated:
       prune: true
