@@ -3,3 +3,6 @@ external-dns:
   domainFilters:
     - dev.thomasbuilds.technology
   fqdnTemplates: "{{ .Name }}.dev.thomasbuilds.technology"
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::007574914499:role/eks-iam-ops-external-dns
