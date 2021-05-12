@@ -1,5 +1,4 @@
 external-dns:
-  aws:
-    region: us-east-2
   domainFilters:
     - dev.thomasbuilds.technology
+  fqdnTemplates: "{{ .Name }}.dev.thomasbuilds.technology"
