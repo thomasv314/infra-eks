@@ -2,12 +2,8 @@
 
 ## Launch cluster
 
-`eksctl create cluster -f cluster.yaml`
+`$ bin/up`
 
 ## Destroy cluster
 
-`eksctl delete cluster -f cluster.yaml`
-
-## Bootstrap ArgoCD
-
-`kubectl kustomize argo-bootstrap | kubectl apply -f`
+`$ bin/down`

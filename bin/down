@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+# TODO delete existing k8s services so we don't have dangling ELB's and a failed CFN stack
+
+echo "=> Deleting cluster"
+eksctl delete cluster -f cluster.yaml

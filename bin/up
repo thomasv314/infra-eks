@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "=> Creating EKS Cluster"
+eksctl create cluster -f cluster.yaml
+
+echo "=> Bootstrapping cluster"
+kubectl kustomize argo-bootstrap | kubectl apply -f
+
+echo "=> Setting up Terraform IAM roles"
+terraform init
+terraform apply
