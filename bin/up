@@ -8,6 +8,9 @@ eksctl create cluster -f cluster.yaml
 echo "=> Bootstrapping cluster"
 kubectl kustomize argo-bootstrap | kubectl apply -f
 
+echo "=> Installing ops app of apps"
+kubectl apply -f argo-bootstrap/ops-app.yaml
+
 echo "=> Setting up Terraform IAM roles"
 terraform init
 terraform apply
