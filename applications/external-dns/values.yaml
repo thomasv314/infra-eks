@@ -1,7 +1,5 @@
 external-dns:
   aws:
     region: us-east-2
-
   sources:
     - service
-    - istio-virtualservice
