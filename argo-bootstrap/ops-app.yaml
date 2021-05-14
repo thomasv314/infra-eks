@@ -1,7 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ops
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: master-app
+  namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -11,7 +17,7 @@ spec:
     targetRevision: HEAD
     path: applications/ops-apps
   destination:
-    namespace: ops
+    namespace: argocd
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
