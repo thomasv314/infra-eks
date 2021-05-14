@@ -13,4 +13,4 @@ kubectl apply -f argo-bootstrap/ops-app.yaml
 
 echo "=> Setting up Terraform IAM roles"
 terraform init
-terraform apply
+terraform apply -auto-approve
