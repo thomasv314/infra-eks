@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-ksops
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    namespace: ops
+    server: {{ .Values.spec.destination.server }}
+  source:
+    repoURL: https://github.com/thomasv314/infra-eks.git
+    targetRevision: HEAD
+    path: applications/external-dns
+  syncPolicy:
+    automated:
+      prune: true
