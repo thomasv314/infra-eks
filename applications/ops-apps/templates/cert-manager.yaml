@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio
+  name: cert-manager
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   destination:
-    namespace: istio-system
+    namespace: ops
     server: {{ .Values.spec.destination.server }}
   source:
     repoURL: https://github.com/thomasv314/infra-eks.git
     targetRevision: HEAD
-    path: applications/istio
+    path: applications/cert-manager
     helm:
       valueFiles:
         - values.yaml
