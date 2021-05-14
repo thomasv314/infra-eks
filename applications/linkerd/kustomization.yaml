@@ -4,3 +4,4 @@ namespace: argocd
 resources:
   - identity-issuer.yaml
   - trust-anchor.yaml
+  - linkerd.yaml
