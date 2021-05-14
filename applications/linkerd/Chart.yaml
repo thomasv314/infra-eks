@@ -1,0 +1,5 @@
+apiVersion: v2
+name: linkerd
+description: linkerd bootstrap
+type: application
+version: 0.0.1
