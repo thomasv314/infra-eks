@@ -7,7 +7,7 @@ locals {
 module "eks-iam" {
   #  source = "git@github.com:thomasv314/tf-eks-iam-roles.git?ref=main"
   source  = "/home/thomas/code/tf-eks-iam"
-  cluster = "dev-cluster"
+  cluster = "sandbox"
 
   roles = [
     {
