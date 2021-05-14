@@ -17,7 +17,6 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-        - values-{{ .Values.environment }}.yaml
   syncPolicy:
     automated:
       prune: true
