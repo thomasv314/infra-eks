@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: https://github.com/thomasv314/infra-eks.git
     targetRevision: HEAD
-    path: applications/external-dns
+    path: applications/test-ksops
   syncPolicy:
     automated:
       prune: true
