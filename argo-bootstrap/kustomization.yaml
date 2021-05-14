@@ -7,3 +7,4 @@ resources:
   - argocd-namespace.yaml
 patchesStrategicMerge:
   - argocd-cm.yaml
+  - argocd-ksops-deployment.yaml
