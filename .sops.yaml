@@ -1,0 +1,3 @@
+creation_rules:
+  - path_regex: 'applications\/.*/.*yaml'
+    kms: "arn:aws:kms:us-east-2:007574914499:alias/kubernetes-secrets"
