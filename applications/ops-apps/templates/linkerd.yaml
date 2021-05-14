@@ -18,3 +18,14 @@ spec:
   syncPolicy:
     automated:
       prune: true
+  ignoreDifferences:
+    - group:  apiextensions.k8s.io
+      kind: CustomResourceDefinition
+      name: serviceprofiles.linkerd.io
+      jsonPointers:
+        - /spec/preserveUnknownFields
+    - group:  apiextensions.k8s.io
+      kind: CustomResourceDefinition
+      name: trafficsplits.split.smi-spec.io
+      jsonPointers:
+        - /spec/preserveUnknownFields
